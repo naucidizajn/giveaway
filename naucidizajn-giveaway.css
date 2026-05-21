@@ -613,10 +613,7 @@
       #nd-form .nd-phone-row,
       #nd-form .nd-contact-grid,
       #nd-form .nd-actions { margin-left: 0; }
-      #nd-form .nd-step[data-key="__welcome"] {
-        align-items: flex-start;
-        padding-top: 50px;
-      }
+      /* Welcome ostaje vertikalno centriran i na mobile-u (default flex align-items: center) */
     }
     @media (prefers-reduced-motion: reduce) {
       #nd-form .nd-step { transition: opacity 200ms linear; }

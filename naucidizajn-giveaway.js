@@ -174,7 +174,7 @@
       welcome: {
         title: 'Prijavi se za giveaway i imaš šansu da osvojiš 6 meseci individualnog web dizajn mentorstva',
         paragraphs: [
-          'Redovna cena mentorstva je <strong>2.300€</strong>.',
+          'Inače, cena mentorstva je <strong>2.300€</strong>.',
           'Popuni kratku prijavu i učestvuj u izvlačenju 🎯'
         ],
         buttonText: 'Prijavi se',

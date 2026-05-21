@@ -47,6 +47,14 @@
     }
     .nd-ty-check svg { width: 32px; height: 32px; }
 
+    .nd-ty-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #DBFF00;
+      margin-bottom: 14px;
+    }
     .nd-ty-title {
       font-size: 28px;
       line-height: 36px;
@@ -62,6 +70,18 @@
       max-width: 600px;
     }
     .nd-ty-subtitle strong { color: #DBFF00; font-weight: 700; }
+
+    /* Sakrij iClosed widget (Lift CTA bubble) na ovoj stranici */
+    [data-cta-widget],
+    iframe[src*="iclosed"],
+    [id^="iclosed"],
+    [class*="iclosed"],
+    [class*="iClosed"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
 
     .nd-ty-card {
       background: #2E321F;
@@ -263,9 +283,6 @@
     });
 
     function renderCard(data) {
-      var first = data.firstName ? esc(data.firstName) : '';
-      var greet = first ? ('Hvala, ' + first + '!') : 'Hvala što si se prijavio!';
-
       var checkSvg =
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">' +
           '<polyline points="20 6 9 17 4 12"/>' +
@@ -274,10 +291,10 @@
       root.innerHTML =
         '<div class="nd-ty-wrap">' +
           '<div class="nd-ty-check" aria-hidden="true">' + checkSvg + '</div>' +
-          '<h1 class="nd-ty-title">' + greet + ' Prijava je primljena.</h1>' +
+          '<div class="nd-ty-eyebrow">Prijava je uspešna</div>' +
+          '<h1 class="nd-ty-title">Dupliraj svoju šansu da osvojiš</h1>' +
           '<p class="nd-ty-subtitle">' +
-            'Ako neko ko se prijavi preko <strong>tvog linka</strong> pobedi, ' +
-            'pobeđuješ i ti. Podeli svoj link i udvostruči šanse.' +
+            'Pozovi prijatelja da se prijavi i ako on osvoji, <strong>osvajaš i ti</strong>.' +
           '</p>' +
           '<div class="nd-ty-card">' +
             '<div class="nd-ty-label">Tvoj referral link</div>' +
