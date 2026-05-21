@@ -626,6 +626,12 @@
       #nd-form .nd-contact-grid,
       #nd-form .nd-actions { margin-left: 0; }
       /* Welcome ostaje vertikalno centriran i na mobile-u (default flex align-items: center) */
+
+      /* Kontakt korak na mobile: skidamo duplirani gap (margin-bottom + flex gap) */
+      #nd-form .nd-contact-grid .nd-input-wrap,
+      #nd-form .nd-contact-grid .nd-phone-row { margin-bottom: 0; }
+      #nd-form .nd-contact-grid { gap: 18px; margin-bottom: 12px; }
+      #nd-form .nd-actions { margin-top: 8px; }
     }
     @media (prefers-reduced-motion: reduce) {
       #nd-form .nd-step { transition: opacity 200ms linear; }
