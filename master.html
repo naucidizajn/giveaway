@@ -26,6 +26,18 @@
       padding: 1px 6px; border-radius: 3px; font-family: monospace;
     }
 
+    /* Sakrij iClosed Lift widget na ovoj stranici (CTA bubble injektovan iz site settings <head>-a) */
+    [data-cta-widget],
+    iframe[src*="iclosed"],
+    [id^="iclosed"],
+    [class*="iclosed"],
+    [class*="iClosed"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
     /* === RESET === */
     #nd-form, #nd-form *, #nd-form *::before, #nd-form *::after { box-sizing: border-box; }
     #nd-form button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; padding: 0; }
