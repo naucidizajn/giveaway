@@ -1299,9 +1299,8 @@
         return /\s/.test(v) && v.split(/\s+/).filter(Boolean).length >= 2;
       }
       function isPhoneValid() {
-        var range = phoneRange(selectedCountry.c);
-        var n = digitsOnly(inputs.phone.value).length;
-        return n >= range[0] && n <= range[1];
+        // Bez per-country blokade — prihvatamo bilo koju dužinu sa makar 4 cifre.
+        return digitsOnly(inputs.phone.value).length >= 4;
       }
 
       function setError(key, hasError, msg) {
@@ -1328,12 +1327,7 @@
         if (key === 'phone') {
           var n = digitsOnly(inputs.phone.value).length;
           if (n === 0) { setError('phone', true, 'Unesi broj telefona.'); return false; }
-          if (!isPhoneValid()) {
-            var r = phoneRange(selectedCountry.c);
-            var lbl = (r[0] === r[1]) ? (r[0] + ' cifara') : (r[0] + '–' + r[1] + ' cifara');
-            setError('phone', true, 'Broj nije validan za ' + selectedCountry.n + ' (' + selectedCountry.d + ' • očekuje se ' + lbl + ').');
-            return false;
-          }
+          if (!isPhoneValid()) { setError('phone', true, 'Broj prekratak.'); return false; }
           setError('phone', false); return true;
         }
         return true;
